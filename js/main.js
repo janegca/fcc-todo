@@ -10,15 +10,22 @@ document.addEventListener("readystatechange", (event) => {
   }
 });
 
+// -- Initialize the Application
 const initApp = () => {
   // Add Listeners
+  const itemEntryForm = document.getElementById("itemEntryForm");
+  itemEntryForm.addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    processSubmission();
+  });
+
   // Procedural
   // load list object
 
   refreshPage();
 };
 
-// Refresh and Clear the Page
+// -- Refresh and Clear the Page
 const refreshPage = () => {
   clearListDisplay();
   renderList();
@@ -39,7 +46,7 @@ const deleteContents = (parent) => {
   }
 };
 
-// Display the To Do List
+// -- Display the To Do List
 const renderList = () => {
   const list = toDoList.getList();
   list.forEach((item) => {
@@ -86,4 +93,35 @@ const clearItemEntryFld = () => {
 
 const setFocusOnItemEntryFld = () => {
   document.getElementById("newItem").focus();
+};
+
+// -- Handle new item additions
+const processSubmission = () => {
+  const newEntryText = getNewEntry();
+  if (!newEntryText.length) return;
+  const nextItemId = calcNextItemId();
+  const toDoItem = createNewItem(nextItemId, newEntryText);
+  toDoList.addItemToList(toDoItem);
+  // TODO: update persistent data
+  refreshPage();
+};
+
+const getNewEntry = () => {
+  return document.getElementById("newItem").value.trim();
+};
+
+const calcNextItemId = () => {
+  let nextItemId = 1;
+  const list = toDoList.getList();
+  if (list.length > 0) {
+    nextItemId = list[list.length - 1].getId() + 1;
+  }
+  return nextItemId;
+};
+
+const createNewItem = (id, txt) => {
+  const toDo = new ToDoItem();
+  toDo.setId(id);
+  toDo.setItem(txt);
+  return toDo;
 };
