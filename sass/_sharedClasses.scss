@@ -1,0 +1,20 @@
+// SASS partial file for class styles
+.button {
+  width: 15%;
+  min-width: 48px;
+  min-width: 48px;
+  color: $clr-button-text;
+  border: 2px solid $clr-border-textbox;
+  border-radius: $border-radius;
+  outline: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  filter: brightness(120%);
+  box-shadow: 4px 2px 4px black;
+}

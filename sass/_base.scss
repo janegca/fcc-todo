@@ -5,6 +5,13 @@ $clr-font: black;
 $clr-bg: #4a90e2;
 $clr-bg-container: #f2f2f2;
 $clr-border-container: black;
+$clr-border-textbox: lightgrey;
+$clr-button-text: white;
+$clr-button-hover: black;
+$clr-button-add: #4caf50;
+$clr-button-clear: #9f6060;
+
+$border-radius: 10px;
 
 // assume default browser font is 16px
 $fs-16px: 1rem;
@@ -50,5 +57,5 @@ section {
   max-width: 44rem; // approx 700px
   margin: auto;
   border: 1px solid $clr-border-container;
-  border-radius: 10px;
+  border-radius: $border-radius;
 }
