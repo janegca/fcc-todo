@@ -1,0 +1,42 @@
+// SASS partial file for section: newItemEntry
+.newItemEntry {
+  position: sticky;
+  top: 0;
+  margin-bottom: $fs-100-16px;
+  padding: $fs-075-12px;
+
+  form {
+    display: flex;
+    justify-content: space-between;
+
+    // push the label off the screen
+    // its for accessibility only
+    label {
+      position: absolute;
+      left: -10000px;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      font-size: $fs-125-20px;
+      border: 2px solid $clr-border-textbox;
+      border-radius: $border-radius;
+      padding: $fs-075-12px;
+      outline: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="text"]:hover {
+      box-shadow: 4px 2px 5px black;
+    }
+
+    button {
+      font-size: $fs-125-20px;
+      background-color: $clr-button-add;
+      padding: $fs-075-12px;
+      @include mq(768px) {
+        font-size: $fs-150-24px;
+      }
+    }
+  }
+}
