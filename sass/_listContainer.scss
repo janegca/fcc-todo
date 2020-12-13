@@ -1,7 +1,7 @@
 // SASS partial file for section: listContainer
 .listContainer {
   min-height: 60vh;
-  padding: $fs-075-12px;
+  padding: $rdur-075-12px;
 
   .listTitle {
     display: flex;
@@ -9,18 +9,41 @@
     align-items: flex-end;
 
     button {
-      font-size: $fs-100-16px;
+      font-size: $rdur-100-16px;
       background-color: $clr-button-clear;
-      padding: 0 $fs-010-02px;
-      margin-bottom: $fs-050-08px;
+      padding: 0 $rdur-010-02px;
+      margin-bottom: $rdur-050-08px;
 
       @include mq(768px) {
-        padding: 0 $fs-050-08px;
+        padding: 0 $rdur-050-08px;
       }
     }
 
     hr {
       width: 100%;
+    }
+  }
+
+  .item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-top: $rdur-100-16px;
+
+    input[type="checkbox"] {
+      text-align: center;
+      width: $rdur-250-40px;
+      height: $rdur-250-40px;
+      min-width: 48px;
+      min-height: 48px;
+      cursor: pointer;
+      margin-right: $rdur-150-24px;
+    }
+
+    input[type="checkbox"]:focus + label {
+      text-decoration: underline;
+      font-size: $rdur-110-18px;
     }
   }
 }

@@ -2,8 +2,8 @@
 .newItemEntry {
   position: sticky;
   top: 0;
-  margin-bottom: $fs-100-16px;
-  padding: $fs-075-12px;
+  margin-bottom: $rdur-100-16px;
+  padding: $rdur-075-12px;
 
   form {
     display: flex;
@@ -18,10 +18,10 @@
 
     input[type="text"] {
       width: 80%;
-      font-size: $fs-125-20px;
+      font-size: $rdur-125-20px;
       border: 2px solid $clr-border-textbox;
       border-radius: $border-radius;
-      padding: $fs-075-12px;
+      padding: $rdur-075-12px;
       outline: none;
     }
 
@@ -31,11 +31,11 @@
     }
 
     button {
-      font-size: $fs-125-20px;
+      font-size: $rdur-125-20px;
       background-color: $clr-button-add;
-      padding: $fs-075-12px;
+      padding: $rdur-075-12px;
       @include mq(768px) {
-        font-size: $fs-150-24px;
+        font-size: $rdur-150-24px;
       }
     }
   }

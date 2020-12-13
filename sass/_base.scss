@@ -13,15 +13,20 @@ $clr-button-clear: #9f6060;
 
 $border-radius: 10px;
 
-// assume default browser font is 16px
-$fs-005-01px: 0.0625rem;
-$fs-010-02px: 0.1rem;
-$fs-050-08px: 0.5rem;
-$fs-075-12px: 0.75rem;
-$fs-100-16px: 1rem;
-$fs-125-20px: 1.25rem;
-$fs-138-22px: 1.375rem;
-$fs-150-24px: 1.5rem;
+// Responsive Design Units in REM
+//   rdur-* => assumes the default browser font is 16px = 1 rem
+//             but should scale ok relative to the user browser
+//             default font size setting
+$rdur-005-01px: 0.0625rem;
+$rdur-010-02px: 0.1rem;
+$rdur-050-08px: 0.5rem;
+$rdur-075-12px: 0.75rem;
+$rdur-100-16px: 1rem;
+$rdur-110-18px: 1.1rem;
+$rdur-125-20px: 1.25rem;
+$rdur-138-22px: 1.375rem;
+$rdur-150-24px: 1.5rem;
+$rdur-250-40px: 2.5rem;
 
 // -- Mixins
 @mixin mq($size) {
@@ -40,14 +45,14 @@ $fs-150-24px: 1.5rem;
 // -- General Styling
 html,
 body {
-  font-size: $fs-100-16px;
+  font-size: $rdur-100-16px;
   font-family: "Montserrat", sans-serif;
   color: $clr-font;
   width: 100%;
   min-height: 100%;
 
   @include mq(768px) {
-    font-size: $fs-138-22px;
+    font-size: $rdur-138-22px;
   }
 }
 
