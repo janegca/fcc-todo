@@ -43,7 +43,16 @@
 
     input[type="checkbox"]:focus + label {
       text-decoration: underline;
+    }
+
+    label {
       font-size: $rdur-110-18px;
     }
+  }
+
+  .confirmation {
+    // for accessibility only, not on screen
+    position: absolute;
+    left: -10000px;
   }
 }
