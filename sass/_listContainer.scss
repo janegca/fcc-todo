@@ -1,0 +1,26 @@
+// SASS partial file for section: listContainer
+.listContainer {
+  min-height: 60vh;
+  padding: $fs-075-12px;
+
+  .listTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    button {
+      font-size: $fs-100-16px;
+      background-color: $clr-button-clear;
+      padding: 0 $fs-010-02px;
+      margin-bottom: $fs-050-08px;
+
+      @include mq(768px) {
+        padding: 0 $fs-050-08px;
+      }
+    }
+
+    hr {
+      width: 100%;
+    }
+  }
+}
