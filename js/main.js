@@ -21,9 +21,9 @@ const initApp = () => {
 // Refresh and Clear the Page
 const refreshPage = () => {
   clearListDisplay();
-  // renderList();
-  // clearItemEntryFld();
-  // setFocusOnItemEntryFld();
+  renderList();
+  clearItemEntryFld();
+  setFocusOnItemEntryFld();
 };
 
 const clearListDisplay = () => {
@@ -57,7 +57,7 @@ const buildListItem = (item) => {
   check.id = item.getId();
   check.tabIndex = 0;
 
-  // addClickListenerToCheckbox(check);
+  addClickListenerToCheckbox(check);
 
   const label = document.createElement("label");
   label.htmlFor = item.getId();
@@ -68,4 +68,22 @@ const buildListItem = (item) => {
 
   const container = document.getElementById("listItems");
   container.appendChild(div);
+};
+
+const addClickListenerToCheckbox = (checkbox) => {
+  checkbox.addEventListener("click", (ev) => {
+    toDoList.removeItemFromList(checkbox.id);
+    // TODO: remove from persisten data
+    setTimeout(() => {
+      refreshPage();
+    }, 1000);
+  });
+};
+
+const clearItemEntryFld = () => {
+  document.getElementById("newItem").value = "";
+};
+
+const setFocusOnItemEntryFld = () => {
+  document.getElementById("newItem").focus();
 };
