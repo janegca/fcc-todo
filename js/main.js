@@ -19,6 +19,21 @@ const initApp = () => {
     processSubmission();
   });
 
+  const clearItems = document.getElementById("clearItems");
+  clearItems.addEventListener("click", (ev) => {
+    const list = toDoList.getList();
+    if (list.length) {
+      const confirmed = confirm(
+        "Are you sure you want to clear the entire list?"
+      );
+      if (confirmed) {
+        toDoList.clearList();
+        // TODO: update persistent data
+        refreshPage();
+      }
+    }
+  });
+
   // Procedural
   // load list object
 
